@@ -31,7 +31,7 @@ $ cat mars.txt
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
+Cold and dry, but everything is my favourite colour
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 An ill-considered change
@@ -51,7 +51,7 @@ index b36abfd..0848c8d 100644
 --- a/mars.txt
 +++ b/mars.txt
 @@ -1,3 +1,4 @@
- Cold and dry, but everything is my favorite color
+ Cold and dry, but everything is my favourite colour
  The two moons may be a problem for Wolfman
  But the Mummy will appreciate the lack of humidity
 +An ill-considered change.
@@ -82,7 +82,7 @@ index 315bf3a..b36abfd 100644
 --- a/mars.txt
 +++ b/mars.txt
 @@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
+ Cold and dry, but everything is my favourite colour
  The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
 ~~~
@@ -99,7 +99,7 @@ index df0654a..b36abfd 100644
 --- a/mars.txt
 +++ b/mars.txt
 @@ -1 +1,3 @@
- Cold and dry, but everything is my favorite color
+ Cold and dry, but everything is my favourite colour
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
 ~~~
@@ -135,7 +135,7 @@ index df0654a..b36abfd 100644
 --- a/mars.txt
 +++ b/mars.txt
 @@ -1 +1,3 @@
- Cold and dry, but everything is my favorite color
+ Cold and dry, but everything is my favourite colour
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
 ~~~
@@ -156,7 +156,7 @@ index df0654a..b36abfd 100644
 --- a/mars.txt
 +++ b/mars.txt
 @@ -1 +1,3 @@
- Cold and dry, but everything is my favorite color
+ Cold and dry, but everything is my favourite colour
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
 ~~~
@@ -208,7 +208,7 @@ $ cat mars.txt
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
+Cold and dry, but everything is my favourite colour
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 ~~~
@@ -233,7 +233,7 @@ $ cat mars.txt
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
+Cold and dry, but everything is my favourite colour
 ~~~
 {: .output}
 

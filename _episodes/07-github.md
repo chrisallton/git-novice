@@ -1,5 +1,5 @@
 ---
-title: Remotes in GitHub
+title: Remotes in GitLab
 teaching: 30
 exercises: 0
 questions:
@@ -25,22 +25,37 @@ services like [GitHub](http://github.com), [BitBucket](http://bitbucket.org) or
 [GitLab](http://gitlab.com/) to hold those master copies; we'll explore the pros
 and cons of this in the final section of this lesson.
 
+We'll be using GitLab, hosted internally, so that the repositories can be
+managed. To start, load up [our GitLab](https://py-ph353.swan.ac.uk/users/sign_up) and create
+an account. (Emails are not enabled, so you won't receive a confirmation email.)
+
 Let's start by sharing the changes we've made to our current project with the
-world.  Log in to GitHub, then click on the icon in the top right corner to
+world.  Log in to GitLab, then click on the "Create a  Project" button, 
+
+![Creating a Repository on GitLab (Step 1)](../fig/github-create-repo-01.png)
+followed by "Create blank project"  
+
+![Creating a repository on GitLab (Step 1a)](../fig/github-create-repo-02b.png)
+to
 create a new repository called `planets`:
 
-![Creating a Repository on GitHub (Step 1)](../fig/github-create-repo-01.png)
+(once you've created this, the button will move to the top right corner)
 
-Name your repository "planets" and then click "Create Repository":
+Name your repository "planets" and then click "Create Project":
 
-![Creating a Repository on GitHub (Step 2)](../fig/github-create-repo-02.png)
+![Creating a Repository on GitLab (Step 2)](../fig/github-create-repo-02.png)
 
-As soon as the repository is created, GitHub displays a page with a URL and some
+The repository is created as "Private" by default; you don't want everyone on the
+server to be able to access your coursework, so leave it like this for now.
+Of course when writing your own research code, you will want to make it public so
+that other scientists can learn from your code, and offer contributions to it.
+
+As soon as the repository is created, GitLab displays a page with a URL and some
 information on how to configure your local repository:
 
-![Creating a Repository on GitHub (Step 3)](../fig/github-create-repo-03.png)
+![Creating a Repository on GitLab (Step 3)](../fig/github-create-repo-03.png)
 
-This effectively does the following on GitHub's servers:
+This effectively does the following on the GitLab server:
 
 ~~~
 $ mkdir planets
@@ -50,24 +65,19 @@ $ git init
 {: .bash}
 
 Our local repository still contains our earlier work on `mars.txt`, but the
-remote repository on GitHub doesn't contain any files yet:
+remote repository on GitLab doesn't contain any files yet:
 
-![Freshly-Made GitHub Repository](../fig/git-freshly-made-github-repo.svg)
+![Freshly-Made GitLab Repository](../fig/git-freshly-made-github-repo.svg)
 
 The next step is to connect the two repositories.  We do this by making the
-GitHub repository a [remote]({{ page.root }}/reference/#remote) for the local repository.
-The home page of the repository on GitHub includes the string we need to
+GitLab repository a [remote]({{ page.root }}/reference/#remote) for the local repository.
+The home page of the repository on GitLab includes the string we need to
 identify it:
 
-![Where to Find Repository URL on GitHub](../fig/github-find-repo-string.png)
-
-Click on the 'HTTPS' link to change the [protocol]({{ page.root }}/reference/#protocol) from
-SSH to HTTPS.
-
-> ## HTTPS vs. SSH
+> ## HTTP vs. SSH
 >
-> We use HTTPS here because it does not require additional configuration.  After
-> the workshop you may want to set up SSH access, which is a bit more secure, by
+> We use HTTP here because it does not require additional configuration.  After
+> the workshop you may want to set up SSH access, which is more secure, by
 > following one of the great tutorials from
 > [GitHub](https://help.github.com/articles/generating-ssh-keys),
 > [Atlassian/BitBucket](https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git)
@@ -75,13 +85,13 @@ SSH to HTTPS.
 > (this one has a screencast).
 {: .callout}
 
-![Changing the Repository URL on GitHub](../fig/github-change-repo-string.png)
+![Changing the Repository URL on GitLab](../fig/github-find-repo-string.png)
 
 Copy that URL from the browser, go into the local `planets` repository, and run
 this command:
 
 ~~~
-$ git remote add origin https://github.com/vlad/planets.git
+$ git remote add origin http://py-ph353.swan.ac.uk/vlad/planets.git
 ~~~
 {: .bash}
 
@@ -96,8 +106,8 @@ $ git remote -v
 {: .bash}
 
 ~~~
-origin   https://github.com/vlad/planets.git (push)
-origin   https://github.com/vlad/planets.git (fetch)
+origin   http://py-ph353.swan.ac.uk/vlad/planets.git (push)
+origin   http://py-ph353.swan.ac.uk/vlad/planets.git (fetch)
 ~~~
 {: .output}
 
@@ -105,7 +115,7 @@ The name `origin` is a local nickname for your remote repository. We could use
 something else if we wanted to, but `origin` is by far the most common choice.
 
 Once the nickname `origin` is set up, this command will push the changes from
-our local repository to the repository on GitHub:
+our local repository to the repository on GitLab:
 
 ~~~
 $ git push origin master
@@ -118,7 +128,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
 Writing objects: 100% (9/9), 821 bytes, done.
 Total 9 (delta 2), reused 0 (delta 0)
-To https://github.com/vlad/planets
+To http://py-ph353.swan.ac.uk/vlad/planets
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ~~~
@@ -171,7 +181,7 @@ Branch master set up to track remote branch master from origin.
 
 Our local and remote repositories are now in this state:
 
-![GitHub Repository After First Push](../fig/github-repo-after-first-push.svg)
+![GitLab Repository After First Push](../fig/github-repo-after-first-push.svg)
 
 > ## The '-u' Flag
 >
@@ -190,7 +200,7 @@ $ git pull origin master
 {: .bash}
 
 ~~~
-From https://github.com/vlad/planets
+From http://py-ph353.swan.ac.uk/vlad/planets
  * branch            master     -> FETCH_HEAD
 Already up-to-date.
 ~~~
@@ -198,23 +208,23 @@ Already up-to-date.
 
 Pulling has no effect in this case because the two repositories are already
 synchronized.  If someone else had pushed some changes to the repository on
-GitHub, though, this command would download them to our local repository.
+GitLab, though, this command would download them to our local repository.
 
-> ## GitHub GUI
+> ## GitLab GUI
 >
-> Browse to your `planets` repository on GitHub.
+> Browse to your `planets` repository on GitLab.
 > Under the Code tab, find and click on the text that says "XX commits" (where "XX" is some number).
 > Hover over, and click on, the three buttons to the right of each commit.
 > What information can you gather/explore from these buttons?
 > How would you get that same information in the shell?
 {: .challenge}
 
-> ## GitHub Timestamp
+> ## GitLab Timestamp
 >
-> Create a remote repository on GitHub.  Push the contents of your local
+> Create a remote repository on GitLab.  Push the contents of your local
 > repository to the remote.  Make changes to your local repository and push
-> these changes.  Go to the repo you just created on GitHub and check the
-> [timestamps]({{ page.root }}/reference/#timestamp) of the files.  How does GitHub record
+> these changes.  Go to the repo you just created on GitLab and check the
+> [timestamps]({{ page.root }}/reference/#timestamp) of the files.  How does GitLab record
 > times, and why?
 {: .challenge}
 
@@ -227,11 +237,11 @@ GitHub, though, this command would download them to our local repository.
 > ## Fixing Remote Settings
 >
 > It happens quite often in practice that you made a typo in the
-> remote URL. This exercice is about how to fix this kind of issues.
+> remote URL. This exercise is about how to fix this kind of issues.
 > First start by adding a remote with an invalid URL:
 >
 > ~~~
-> git remote add broken https://github.com/this/url/is/invalid
+> git remote add broken http://py-ph353.swan.ac.uk/this/url/is/invalid
 > ~~~
 > {: .bash}
 >
@@ -242,9 +252,9 @@ GitHub, though, this command would download them to our local repository.
 > done with this exercise.
 {: .challenge}
 
-> ## GitHub License and README files
+> ## GitLab License and README files
 >
-> In this section we learned about creating a remote repository on GitHub, but when you initialized your
-> GitHub repo, you didn't add a README.md or a license file. If you had, what do you think would have happened when
+> In this section we learned about creating a remote repository on GitLab, but when you initialized your
+> GitLab repo, you didn't add a README.md or a license file. If you had, what do you think would have happened when
 > you tried to link your local and remote repositories?
 {: .challenge}

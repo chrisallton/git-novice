@@ -31,7 +31,7 @@ $ nano mars.txt
 Type the text below into the `mars.txt` file:
 
 ~~~
-Cold and dry, but everything is my favorite color
+Cold and dry, but everything is my favourite colour
 ~~~
 {: .output}
 
@@ -53,7 +53,7 @@ $ cat mars.txt
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
+Cold and dry, but everything is my favourite colour
 ~~~
 {: .output}
 
@@ -201,7 +201,7 @@ $ cat mars.txt
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
+Cold and dry, but everything is my favourite colour
 The two moons may be a problem for Wolfman
 ~~~
 {: .output}
@@ -248,7 +248,7 @@ index df0654a..315bf3a 100644
 --- a/mars.txt
 +++ b/mars.txt
 @@ -1 +1,2 @@
- Cold and dry, but everything is my favorite color
+ Cold and dry, but everything is my favourite colour
 +The two moons may be a problem for Wolfman
 ~~~
 {: .output}
@@ -358,7 +358,7 @@ $ cat mars.txt
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
+Cold and dry, but everything is my favourite colour
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 ~~~
@@ -375,7 +375,7 @@ index 315bf3a..b36abfd 100644
 --- a/mars.txt
 +++ b/mars.txt
 @@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
+ Cold and dry, but everything is my favourite colour
  The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
 ~~~
@@ -411,7 +411,7 @@ index 315bf3a..b36abfd 100644
 --- a/mars.txt
 +++ b/mars.txt
 @@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
+ Cold and dry, but everything is my favourite colour
  The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
 ~~~
