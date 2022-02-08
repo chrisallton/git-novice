@@ -60,13 +60,13 @@ $ git commit -m "Adding a line in our home copy"
 {: .bash}
 
 ~~~
-[master 5ae9631] Adding a line in our home copy
+[main 5ae9631] Adding a line in our home copy
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
 
 ~~~
-$ git push origin master
+$ git push origin main
 ~~~
 {: .bash}
 
@@ -77,7 +77,7 @@ Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 352 bytes, done.
 Total 3 (delta 1), reused 0 (delta 0)
 To http://py-ph353.swan.ac.uk/vlad/planets
-   29aba7c..dabb4c8  master -> master
+   29aba7c..dabb4c8  main -> main
 ~~~
 {: .output}
 
@@ -108,7 +108,7 @@ $ git commit -m "Adding a line in my copy"
 {: .bash}
 
 ~~~
-[master 07ebc69] Adding a line in my copy
+[main 07ebc69] Adding a line in my copy
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
@@ -116,13 +116,13 @@ $ git commit -m "Adding a line in my copy"
 but Git won't let us push it to GitLab:
 
 ~~~
-$ git push origin master
+$ git push origin main
 ~~~
 {: .bash}
 
 ~~~
 To http://py-ph353.swan.ac.uk/vlad/planets.git
- ! [rejected]        master -> master (non-fast-forward)
+ ! [rejected]        main -> main (non-fast-forward)
 error: failed to push some refs to 'http://py-ph353.swan.ac.uk/vlad/planets.git'
 hint: Updates were rejected because the tip of your current branch is behind
 hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
@@ -141,7 +141,7 @@ and then push that.
 Let's start by pulling:
 
 ~~~
-$ git pull origin master
+$ git pull origin main
 ~~~
 {: .bash}
 
@@ -151,7 +151,7 @@ remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 1), reused 3 (delta 1)
 Unpacking objects: 100% (3/3), done.
 From http://py-ph353.swan.ac.uk/vlad/planets
- * branch            master     -> FETCH_HEAD
+ * branch            main     -> FETCH_HEAD
 Auto-merging mars.txt
 CONFLICT (content): Merge conflict in mars.txt
 Automatic merge failed; fix conflicts and then commit the result.
@@ -215,7 +215,7 @@ $ git status
 {: .bash}
 
 ~~~
-On branch master
+On branch main
 All conflicts fixed but you are still merging.
   (use "git commit" to conclude merge)
 
@@ -232,14 +232,14 @@ $ git commit -m "Merging changes from GitLab"
 {: .bash}
 
 ~~~
-[master 2abf2b1] Merging changes from GitLab
+[main 2abf2b1] Merging changes from GitLab
 ~~~
 {: .output}
 
 Now we can push our changes to GitLab:
 
 ~~~
-$ git push origin master
+$ git push origin main
 ~~~
 {: .bash}
 
@@ -250,7 +250,7 @@ Compressing objects: 100% (6/6), done.
 Writing objects: 100% (6/6), 697 bytes, done.
 Total 6 (delta 2), reused 0 (delta 0)
 To http://py-ph353.swan.ac.uk/vlad/planets.git
-   dabb4c8..2abf2b1  master -> master
+   dabb4c8..2abf2b1  main -> main
 ~~~
 {: .output}
 
@@ -259,7 +259,7 @@ so we don't have to fix things by hand again
 when the collaborator who made the first change pulls again:
 
 ~~~
-$ git pull origin master
+$ git pull origin main
 ~~~
 {: .bash}
 
@@ -269,7 +269,7 @@ remote: Compressing objects: 100% (4/4), done.
 remote: Total 6 (delta 2), reused 6 (delta 2)
 Unpacking objects: 100% (6/6), done.
 From http://py-ph353.swan.ac.uk/vlad/planets
- * branch            master     -> FETCH_HEAD
+ * branch            main     -> FETCH_HEAD
 Updating dabb4c8..2abf2b1
 Fast-forward
  mars.txt | 2 +-

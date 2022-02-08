@@ -22,7 +22,7 @@ Systems like Git allow us to move work between any two repositories.  In
 practice, though, it's easiest to use one copy as a central hub, and to keep it
 on the web rather than on someone's laptop.  Most programmers use hosting
 services like [GitHub](http://github.com), [BitBucket](http://bitbucket.org) or
-[GitLab](http://gitlab.com/) to hold those master copies; we'll explore the pros
+[GitLab](http://gitlab.com/) to hold those main copies; we'll explore the pros
 and cons of this in the final section of this lesson.
 
 We'll be using GitLab, hosted internally, so that the repositories can be
@@ -118,7 +118,7 @@ Once the nickname `origin` is set up, this command will push the changes from
 our local repository to the repository on GitLab:
 
 ~~~
-$ git push origin master
+$ git push origin main
 ~~~
 {: .bash}
 
@@ -129,8 +129,8 @@ Compressing objects: 100% (6/6), done.
 Writing objects: 100% (9/9), 821 bytes, done.
 Total 9 (delta 2), reused 0 (delta 0)
 To http://py-ph353.swan.ac.uk/vlad/planets
- * [new branch]      master -> master
-Branch master set up to track remote branch master from origin.
+ * [new branch]      main -> main
+Branch main set up to track remote branch main from origin.
 ~~~
 {: .output}
 
@@ -189,19 +189,19 @@ Our local and remote repositories are now in this state:
 > option is synonymous with the `--set-upstream-to` option for the `git branch`
 > command, and is used to associate the current branch with a remote branch so
 > that the `git pull` command can be used without any arguments. To do this,
-> simply use `git push -u origin master` once the remote has been set up.
+> simply use `git push -u origin main` once the remote has been set up.
 {: .callout}
 
 We can pull changes from the remote repository to the local one as well:
 
 ~~~
-$ git pull origin master
+$ git pull origin main
 ~~~
 {: .bash}
 
 ~~~
 From http://py-ph353.swan.ac.uk/vlad/planets
- * branch            master     -> FETCH_HEAD
+ * branch            main     -> FETCH_HEAD
 Already up-to-date.
 ~~~
 {: .output}
