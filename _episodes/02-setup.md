@@ -98,7 +98,7 @@ same commands to choose another editor or update your email address.
 > command for this is in the next episode.  Note that if this value is unset in your local Git 
 > configuration, the `init.defaultBranch` value defaults to `master`.
 >
-
+{: .callout}
 
 > ## Proxy
 >
